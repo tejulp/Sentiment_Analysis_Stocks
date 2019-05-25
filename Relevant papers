@@ -1,0 +1,32 @@
+1. https://arxiv.org/pdf/1901.00400.pdf --> an introductory outline to different models used
+we compare and propose algorithms to predict the sentiment of individual sentences in financial news.
+Step 1: perform several preprocessing operations using tools from natural language processing.
+Step 2: textual datais mapped to a vector-based representation using sentence embeddings.
+Step 3: combine the vector representations with the historic stock market returns of companies to train a sentence-level classifier using multi-instance learning.
+
+2. https://arxiv.org/ftp/arxiv/papers/1812/1812.04199.pdf --> Dictionary based approach but can be useful while writing technical paper
+In this paper, we retrieved, extracted and analyzed the effects of news sentiments on stocks in the pharmaceutical sector
+There are many microeconomic and macroeconomic variables that can lead to the movement of price in the stock market 
+identify important words and their polarity in the news articles.
+news source: used  moneycontrol.com and Investing.com was used as the source for retrieving detailed intraday (30-minute gap) pricing data for each stock. 
+
+3. https://arxiv.org/pdf/1811.11008.pdf --> associative rule mining approach using performance indicators
+The performance indicator words are categorized as lagging and leading indicators. 
+Lagging indicators reflect the results of firms activity e.g. improvement or decline in sales, market share, operating profit, operating cost, orders, inventory turns etc. 
+The leading indicators signal future events and are precursors to the firms future performance. 
+Some of the common examples of leading indicators are: #newstores, #employee recruitments, #employee reductions/layoffs, #new customers,% increase in productivity, % increase in production capacity, #new contracts wonor awarded, and % increase in plant utilization
+
+4. https://arxiv.org/pdf/1811.06173.pdf --> most relevant paper
+Bidirectional-LSTM areused to encode the news text and capture the context information, self attention mechanism are applied to distribute attention on most relative words, news and days
+The model input are financial news titles extractedfrom Reuters and Bloomberg.
+Train our own word embedding with financial domainnews text consisting of news articles from Reuters an Bloomberg.
+word embedding + character embedding
+Self attention layer: word level + news level
+Including the body text of the news performs worse than just the headline, there may be useful information to extract from thebody text
+other directions include looking at predicting price movements at arange of time horizons, in order to gauge empirically how quickly informationare absorbed in the market, and relate this to the finance literature on the topic.
+
+5. https://arxiv.org/pdf/1903.05440.pdf --> sentiment attitude (positive or negative) + sentiment emotion (joy, fear, anger, sadness, trust, disgust, anticipation, surprise)
+source code: https://github.com/AndMu/Market-Wisdom
+sentiment Data: collected three Financial Times (FT) datasets covering different time periods + large set of historical newsheadlines from Reddit’s WorldNews Channel (RWNC) +  gathered from Twitter a large collection of financial tweets 
+stock prices data: Quandl, Kaggel, and Bloomberg.
+Method: Granger-causality - time series data-driven method for identifying causality based on a statistical hypothesis test that determines whether one time series is instrumental in forecasting the other. (widely accepted in econometrics)
