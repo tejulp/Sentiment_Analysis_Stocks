@@ -30,3 +30,10 @@ source code: https://github.com/AndMu/Market-Wisdom
 sentiment Data: collected three Financial Times (FT) datasets covering different time periods + large set of historical newsheadlines from Reddit’s WorldNews Channel (RWNC) +  gathered from Twitter a large collection of financial tweets 
 stock prices data: Quandl, Kaggel, and Bloomberg.
 Method: Granger-causality - time series data-driven method for identifying causality based on a statistical hypothesis test that determines whether one time series is instrumental in forecasting the other. (widely accepted in econometrics)
+
+6. https://arxiv.org/pdf/1902.02709.pdf --> Extracting opinion for aspect based sentiment analysis
+ Input to LSTM network is a concatenation of word embedding and feature embeddings ( POS Tagging and phrase chunks)
+ for extracting phrases - used rules in english language revolving around nouns, verb, adverb and adjective (heuristic rules)
+ pre-processing: remove words occuring once, replace numbers with NUM and all text is lowercase
+ word embedding: Senna
+ model: Attention based Bi-LSTM + Conditional Random Field (CRF) model is incorporated in the final layer 
